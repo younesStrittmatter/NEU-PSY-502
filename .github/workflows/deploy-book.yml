@@ -310,8 +310,8 @@ jobs:
       with:
         token: ${{ env.GH_TOKEN }}
 
-    - run: |
-        mkdir final/
+    - run: | # if needed, create a directory for the final artifacts 
+        [ -d final ] || mkdir final/
 
     - name: Download all artifacts
       uses: actions/download-artifact@v4
